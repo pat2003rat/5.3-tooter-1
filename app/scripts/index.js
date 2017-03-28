@@ -10,5 +10,12 @@ $(function(){
     view.showPosts(posts);
   });
 
+  $('#blog-post').submit(function(event){
+    event.preventDefault();
+    $(document).trigger('create:post', [{title: "Cool", body: "Cool"}])
+
+  });
+
+
   models.Post.fetch();
 });
